@@ -5,7 +5,6 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:shop/data/model/entity/calc_cart.dart';
 import 'package:shop/data/model/entity/cart_product.dart';
-import 'package:shop/navigation/app_router.dart';
 import 'card_page_wm.dart';
 
 @RoutePage()
@@ -101,50 +100,11 @@ class CartPageWidget extends ElementaryWidget<ICartPageWidgetModel> {
                     },
                   ),
                 ),
-                Expanded(
-                  flex: 0,
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "ИТОГО: ${calcCart.price} ₽",
-                        style: theme.textTheme.bodyMedium?.copyWith(
-                          color: theme.colorScheme.onSurface,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "Cкидка: -${calcCart.oldPrice != null ? (calcCart.oldPrice! - calcCart.price) : 0} ₽",
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          color: theme.colorScheme.onSurface,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        decoration: const BoxDecoration(
-                          color: Colors.black,
-                        ),
-                        child: TextButton(
-                          onPressed: () {
-                            wm.navigateToOrderRoute();
-                          },
-                          child: Text(
-                            'ОФОРМИТЬ ЗАКАЗ',
-                            style: theme.textTheme.bodyMedium
-                                ?.copyWith(color: theme.colorScheme.secondary),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                    ],
-                  ),
+                OrderCard(
+                  onTab: () {
+                    wm.navigateToOrderRoute();
+                  },
+                  calcCart: calcCart,
                 ),
               ],
             );
@@ -311,6 +271,65 @@ class ProductCard extends StatelessWidget {
           endIndent: 16,
         ),
       ],
+    );
+  }
+}
+
+class OrderCard extends StatelessWidget {
+  const OrderCard({
+    super.key,
+    required this.onTab,
+    required this.calcCart,
+  });
+
+  final VoidCallback onTab;
+  final CalcCart calcCart;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Expanded(
+      flex: 0,
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            "ИТОГО: ${calcCart.price} ₽",
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(
+            "Cкидка: -${calcCart.oldPrice != null ? (calcCart.oldPrice! - calcCart.price) : 0} ₽",
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurface,
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Container(
+            width: double.infinity,
+            decoration: const BoxDecoration(
+              color: Colors.black,
+            ),
+            child: TextButton(
+              onPressed: onTab,
+              child: Text(
+                'ОФОРМИТЬ ЗАКАЗ',
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(color: theme.colorScheme.secondary),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+        ],
+      ),
     );
   }
 }
