@@ -1,8 +1,5 @@
-import 'package:decimal/decimal.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:shop/data/model/entity/calc_cart.dart';
-import 'package:shop/data/model/entity/cart_update.dart';
 import 'package:shop/data/model/entity/catalog_products_request.dart';
 import 'package:shop/data/model/product.dart';
 import 'package:shop/data/service/cart_client.dart';
@@ -38,20 +35,5 @@ class CatalogPageModel extends ElementaryModel {
       debugPrint(e.toString());
     }
     return (<Product>[], false);
-  }
-
-  Future<CalcCart> addToCart(int productId) async {
-    try {
-      final response =
-          await cartClient.postCart(request: CartUpdate(productId: productId));
-      return (response);
-    } catch (e) {
-      debugPrint(e.toString());
-    }
-    return CalcCart(
-      price: Decimal.parse('0'),
-      count: 0,
-      products: [],
-    );
   }
 }

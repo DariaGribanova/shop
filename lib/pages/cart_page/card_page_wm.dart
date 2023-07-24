@@ -15,6 +15,7 @@ abstract class ICartPageWidgetModel extends IWidgetModel {
   Future<void> deleteCart(int productId);
 
   void navigateToCatalogTab();
+
   void navigateToOrderRoute();
 
   ThemeData get theme;
@@ -38,26 +39,12 @@ class CartPageWidgetModel extends WidgetModel<CartPageWidget, CartPageModel>
 
   @override
   Future<void> loadProducts() async {
-    cartService.productState.loading(cartService.productState.value?.data);
-    try {
-      final data = await model.getNextPage();
-      cartService.productState.content(data);
-    } catch (e) {
-      cartService.productState.error();
-      debugPrint(e.toString());
-    }
+    cartService.loadProducts();
   }
 
   @override
   Future<void> updateCart(int productId, int count) async {
-    cartService.productState.loading(cartService.productState.value?.data);
-    try {
-      final data = await model.updateCart(productId, count);
-      cartService.productState.content(data);
-    } catch (e) {
-      cartService.productState.error();
-      debugPrint(e.toString());
-    }
+    cartService.updateCart(productId, count);
   }
 
   @override
@@ -76,14 +63,7 @@ class CartPageWidgetModel extends WidgetModel<CartPageWidget, CartPageModel>
 
   @override
   Future<void> deleteCart(int productId) async {
-    cartService.productState.loading(cartService.productState.value?.data);
-    try {
-      final data = await model.deleteCart(productId);
-      cartService.productState.content(data);
-    } catch (e) {
-      cartService.productState.error();
-      debugPrint(e.toString());
-    }
+    cartService.deleteCart(productId);
   }
 
   @override

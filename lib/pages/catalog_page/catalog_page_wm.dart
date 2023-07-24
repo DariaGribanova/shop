@@ -43,14 +43,7 @@ class CatalogPageWidgetModel
 
   @override
   Future<void> addToCart(int productId) async {
-    cartService.productState.loading(cartService.productState.value?.data);
-    try {
-      final data = await model.addToCart(productId);
-      cartService.productState.content(data);
-    } catch (e) {
-      cartService.productState.error();
-      debugPrint(e.toString());
-    }
+    cartService.addToCart(productId);
   }
 
   @override
