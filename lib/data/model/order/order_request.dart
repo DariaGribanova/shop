@@ -1,4 +1,4 @@
-import 'package:shop/data/model/product_with_count.dart';
+import 'package:shop/data/model/product/product_with_count.dart';
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 

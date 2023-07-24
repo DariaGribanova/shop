@@ -1,7 +1,7 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:shop/data/model/entity/catalog_products_request.dart';
-import 'package:shop/data/model/product.dart';
+import 'package:shop/data/model/catalog/catalog_products_request.dart';
+import 'package:shop/data/model/product/product.dart';
 import 'package:shop/data/service/cart_client.dart';
 import 'package:shop/data/service/catalog_client.dart';
 

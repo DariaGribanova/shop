@@ -3,8 +3,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:decimal/decimal.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:shop/data/model/entity/calc_cart.dart';
-import 'package:shop/data/model/entity/cart_product.dart';
+import 'package:shop/data/model/cart/calc_cart.dart';
+import 'package:shop/data/model/cart/cart_product.dart';
 import 'card_page_wm.dart';
 
 @RoutePage()

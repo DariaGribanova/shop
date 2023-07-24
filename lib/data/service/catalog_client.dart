@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
-import 'package:shop/data/model/entity/catalog_products_request.dart';
-import 'package:shop/data/model/entity/catalog_products_response.dart';
+import 'package:shop/data/model/catalog/catalog_products_request.dart';
+import 'package:shop/data/model/catalog/catalog_products_response.dart';
 
 part 'catalog_client.g.dart';
 

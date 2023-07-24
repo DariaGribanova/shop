@@ -1,6 +1,6 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:shop/data/model/order_request.dart';
+import 'package:shop/data/model/order/order_request.dart';
 import 'package:shop/data/service/order_client.dart';
 
 class OrderPageModel extends ElementaryModel {

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:shop/data/model/entity/calc_cart.dart';
-import 'package:shop/data/model/entity/calculated_cart.dart';
-import 'package:shop/data/model/entity/cart_update.dart';
+import 'package:shop/data/model/cart/calc_cart.dart';
+import 'package:shop/data/model/cart/calculated_cart.dart';
+import 'package:shop/data/model/cart/cart_update.dart';
 
 part 'cart_client.g.dart';
 

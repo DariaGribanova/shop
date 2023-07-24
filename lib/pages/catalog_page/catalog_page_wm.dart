@@ -2,7 +2,7 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/data/service/cart_service.dart';
-import 'package:shop/data/model/product.dart';
+import 'package:shop/data/model/product/product.dart';
 import 'package:shop/data/service/catalog_client.dart';
 import 'catalog_page_model.dart';
 import 'catalog_page_widget.dart';

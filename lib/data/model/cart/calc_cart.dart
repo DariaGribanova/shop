@@ -1,6 +1,6 @@
 import 'package:decimal/decimal.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shop/data/model/entity/cart_product.dart';
+import 'package:shop/data/model/cart/cart_product.dart';
 
 part 'calc_cart.freezed.dart';
 

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shop/data/model/product.dart';
-import 'package:shop/data/model/product_cart.dart';
+
+import 'package:shop/data/model/product/product_cart.dart';
 
 part 'cart_product.freezed.dart';
 

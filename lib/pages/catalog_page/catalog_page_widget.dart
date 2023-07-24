@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:shop/data/model/product.dart';
+import 'package:shop/data/model/product/product.dart';
 import 'package:shop/data/components/pagination_builder.dart';
 import 'catalog_page_wm.dart';
 
